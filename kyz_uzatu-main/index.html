@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Қыз ҳзату шақыру</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <audio id="background-music" src="music.mp3" loop></audio>
+    <button id="music-toggle" class="music-btn">🎵</button>
+    
+
+    <div class="hero animate">
+        <img src="ayna.jpg" alt="Айна" class="hero-image">
+        <div class="hero-text">
+            <h1>Aina</h1>
+            <p>Qyz Uzatu</p>
+        </div>
+    </div>
+
+
+    <div class="container animate">
+        <h1 class="names">Құрметті қонақтар!</h1>
+        <p class="invite">Сіздерді берекелі шаңырақта бойжеткен аяулы қызымыз</p>
+        <h1 class="bride-name">Айнаның</h1>
+        <p class="invite">ұзату тойына арналған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
+
+
+    <div class="center-image animate">
+        <img src="dance.png" alt="Фото" />
+    </div>
+
+
+
+        <div class="calendar-full-container animate">
+
+            <h2 class="calendar-heading">Қай күн?</h2>
+            <div class="calendar-top">
+                <div>сенбі</div>
+                <div class="calendar-date">9</div>
+                <div>17:00</div>
+            </div>
+            <div class="calendar-month-year">тамыз 2025</div>
+
+            <div class="calendar-grid">
+                <div class="day-name">ДС</div>
+                <div class="day-name">СС</div>
+                <div class="day-name">СР</div>
+                <div class="day-name">БС</div>
+                <div class="day-name">ЖМ</div>
+                <div class="day-name">СН</div>
+                <div class="day-name">ЖС</div>
+
+                <!-- Пустые ячейки до пятницы (1 тамыз) -->
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day">6</div>
+                <div class="day">7</div>
+                <div class="day">8</div>
+                <div class="day highlight">9</div>
+                <div class="day">10</div>
+                <div class="day">11</div>
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day">17</div>
+                <div class="day">18</div>
+                <div class="day">19</div>
+                <div class="day">20</div>
+                <div class="day">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <div class="day">29</div>
+                <div class="day">30</div>
+                <div class="day">31</div>
+            </div>
+        </div>
+
+
+<div class="location-block animate">
+    <div class="address-text-wrapper">
+        <p class="address-text">
+            <strong>📍 Мекен-жайымыз:</strong><br>
+            "Ержан" мейрамханасы<br>
+            Көкшетау қаласы
+        </p>
+    </div>
+    <img src="cat_space.png" alt="Котик справа" class="location-image cat-right">
+</div>
+
+<a href="[https://2gis.kz/kokshetau/firm/70000001033946259?m=69.396782%2C53.31314%2F16](https://2gis.kz/kokshetau/firm/70000001033946259?m=69.396782%2C53.31314%2F16)" class="map-icon-button" target="_blank">
+    <img src="2gis-icon.png" alt="2ГИС">
+</a>
+
+
+        <div class="hosts animate">
+            <p>Той иелері:</p>
+            <h2>Қайрат-Аида</h2>
+        </div>
+
+
+        <div class="timer-photo-section animate">
+            <img src="photo2.jpg" alt="Aina qyz uzatu" class="timer-photo">
+            <div class="countdown-overlay">
+                <p class="countdown-title">Узату тойына дейін:</p>
+                <div id="countdown">
+                    <div><span id="days">00</span>дней</div>
+                    <div><span id="hours">00</span>часов</div>
+                    <div><span id="minutes">00</span>минут</div>
+                    <div><span id="seconds">00</span>секунд</div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            const targetDate = new Date("2025-08-09T00:00:00").getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const diff = targetDate - now;
+
+                if (diff <= 0) {
+                    document.getElementById("countdown").innerHTML = "Ждём вас!";
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = String(days).padStart(2, "0");
+                document.getElementById("hours").innerText = String(hours).padStart(2, "0");
+                document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
+                document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
+            }
+
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        </script>
+
+
+        <section class="rsvp animate">
+            <h2>Қатысуыңызды растаңыз</h2>
+            <form id="rsvp-form">
+                <input type="text" id="name" placeholder="Атыңыз" required>
+                <select id="attendance" required>
+                    <option value="">Қатысасыз ба?</option>
+                    <option value="Барамын">Барамын</option>
+                    <option value="Бара алмаймын">Бара алмаймын</option>
+                </select>
+                <button type="submit">Жіберу</button>
+            </form>
+            <p id="confirmation-message" style="margin-top:10px;"></p>
+        </section>
+
+        <script>
+            const botToken = '7832038971:AAFJlweskwLOf4z-3IpmpGAKHXHnNavFBB8';
+            const chatId = '542313836';
+
+            document.getElementById('rsvp-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const attendance = document.getElementById('attendance').value;
+
+                const message = `📬 Жауап:\nАты: ${name}\nҚатысуы: ${attendance}`;
+
+                fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: message
+                    })
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            document.getElementById('confirmation-message').innerText = 'Рақмет! Жауабыңыз жіберілді.';
+                            document.getElementById('rsvp-form').reset();
+                        } else {
+                            document.getElementById('confirmation-message').innerText = 'Қате шықты. Қайта көріңіз.';
+                        }
+                    });
+            });
+        </script>
+        <script>
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate').forEach(el => {
+                observer.observe(el);
+            });
+        </script>
+
+        <script>
+            const music = document.getElementById('background-music');
+            const toggleBtn = document.getElementById('music-toggle');
+
+            let isPlaying = false;
+
+            toggleBtn.addEventListener('click', () => {
+                if (isPlaying) {
+                    music.pause();
+                    toggleBtn.textContent = '🎵';
+                } else {
+                    music.play();
+                    toggleBtn.textContent = '🔇';
+                }
+                isPlaying = !isPlaying;
+            });
+        </script>
+
+    <div class="bottom-image">
+  <img src="three_cats.png" alt="Фото" />
+</div>
+
+
+
+</body>
+
+</html>

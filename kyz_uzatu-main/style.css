@@ -1,0 +1,580 @@
+:root {
+    --main-bg: #faf6f6;
+    --accent: #f0f0f0;
+    --accent-hover: #a93226;
+    --text-dark: #4d2e0d;
+    --text-muted: #774e4e;
+    --highlight: #986262;
+    --font-main: 'Noto Sans', 'Georgia', serif;
+    --font-decor: 'Pacifico', ;
+}
+
+body {
+    font-family: 'Noto Sans', 'Georgia', serif;
+    background-color: none;
+    /* <-- заменили фон */
+    background-image: none;
+    /* <-- отключили картинку */
+    color: #4d2e0d;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin-bottom: 0px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 5px;
+    background-color: transparent;
+    border-radius: 10px;
+    /* box-shadow: 0 8px 20px rgba(112, 57, 57, 0.3); */
+    color: var(--highlight);
+    /* Обратите внимание, что основной текст в .container будет этим цветом */
+}
+
+.names {
+    font-family: 'Pacifico';
+    font-size: 63px;
+    color: #985656;
+}
+
+.bride-name {
+    font-family: 'Marck Script', cursive;
+    /* Или var(--font-decor) или другой 'красивый' шрифт */
+    font-size: 72px;
+    /* Подберите подходящий крупный размер */
+    color: #985656;
+    /* Можно такой же цвет, как у .names, или другой акцентный */
+    margin-top: 0px;
+    /* Возможно, понадобятся отступы */
+    margin-bottom: 0px;
+}
+
+.invite {
+    margin-top: 0;
+    font-family: 'Open Sans';
+    font-size: 45px;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+
+.details p {
+    font-size: 39px;
+    margin: 10px 0;
+    color: #7a4c4c;
+}
+
+/* Кнопка */
+.btn,
+.map-button,
+#rsvp-form button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 28px;
+    font-weight: bold;
+    border: none;
+    border-radius: 18px;
+    text-decoration: none;
+    background-color: rgb(159, 30, 30);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.btn:hover,
+.map-button:hover,
+#rsvp-form button:hover {
+    background-color: rgb(171, 15, 15);
+    transform: translateY(-2px);
+}
+
+.map-button {
+    display: flex;
+    /* Используем flex для выравнивания иконки и текста */
+    align-items: center;
+    justify-content: center;
+    /* Центрируем содержимое кнопки */
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.map-icon {
+    font-size: 36px;
+}
+
+/* RSVP - Обновленная секция */
+.rsvp {
+    background-color: rgba(255, 255, 255, 0.85);
+    /* Полупрозрачный фон */
+    padding: 30px;
+    margin: 60px auto;
+    /* Центрирование и отступы */
+    max-width: 750px;
+    /* Ограничение ширины */
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Тень как у календаря/таймера */
+}
+
+/* Заголовок для секции RSVP */
+.rsvp h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    font-family: var(--font-main);
+}
+
+/* Стили для формы внутри .rsvp */
+#rsvp-form {
+    /* Применяем стили напрямую к форме по ID */
+    max-width: 500px;
+    /* Форма будет немного уже, чем блок .rsvp */
+    margin: 0 auto;
+    /* Центрируем форму внутри .rsvp */
+}
+
+/* Обновленные стили для полей ввода в форме RSVP */
+#rsvp-form input[type="text"],
+#rsvp-form select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    /* Нижний отступ увеличен для кнопки */
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* Более мягкая рамка */
+    background-color: rgb(238, 234, 234);
+    /* Слегка полупрозрачный фон */
+    font-size: 27px;
+    font-family: var(--font-main);
+    /* Убедимся, что шрифт основной */
+    color: var(--text-dark);
+    box-sizing: border-box;
+}
+
+#rsvp-form input[type="text"]::placeholder {
+    color: var(--text-muted);
+}
+
+#rsvp-form select {
+    appearance: none;
+    /* Убираем стандартную стрелку */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Замените SVG data URI на URL вашего файла со стрелкой или используйте этот: */
+    /* Немного измененная стрелка, цвет соответствует --text-dark, размер чуть меньше */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234d2e0d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px;
+    /* Размер стрелки */
+    padding-right: 35px;
+    /* Дополнительное место справа для стрелки */
+}
+
+#rsvp-form option {
+    background-color: #fff;
+    /* Фон для опций, чтобы были читаемы */
+    color: var(--text-dark);
+}
+
+
+/* Hero */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+    margin-bottom: 0px
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 40px;
+    /* вместо top: 50% */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    font-family: 'Marck Script', cursive;
+}
+
+.hero-text h1 {
+    font-size: 140px;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text p {
+    font-size: 88px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Calendar */
+.calendar-full-container {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 750px;
+    margin: 60px auto;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-title {
+    font-size: 28px;
+    /* Уже было, соответствует .rsvp h2 */
+    color: var(--text-dark);
+    /* Добавил для уверенности */
+    margin-bottom: 10px;
+}
+
+.calendar-subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #a35a2a;
+    /* Оставляем этот специфичный цвет или меняем на var(--text-muted) */
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.calendar-day,
+.calendar-day-name {
+    padding: 10px 0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.calendar-day-name {
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: var(--text-dark);
+    /* Добавил для читаемости дней недели */
+}
+
+.calendar-day {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-dark);
+    /* Добавил для читаемости чисел */
+}
+
+.calendar-day.highlight {
+    background-color: var(--accent);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(192, 57, 43, 0.6);
+}
+
+.calendar-day.empty {
+    background-color: transparent;
+}
+
+.animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-icon-button {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-icon-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.map-icon-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+.custom-calendar {
+    background-color: transparent;
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Noto Sans', 'Georgia', serif;
+    color: #3b2d2d;
+}
+
+.calendar-heading {
+    font-family: 'Marck Script', cursive;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.calendar-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.calendar-date {
+    font-size: 40px;
+    font-weight: bold;
+    color: #7a4c4c;
+}
+
+.calendar-month-year {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #7a4c4c;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    font-size: 1px !important;
+    font-weight: 600;
+    color: #3a1f1f;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.day-name {
+    font-weight: 600;
+    font-size: 22px;
+    padding: 10px 0;
+}
+
+.day {
+    font-size: 32px;
+    padding: 12px 0;
+    color: #3b2d2d;
+}
+
+.empty {
+    visibility: hidden;
+}
+
+.highlight {
+    background-color: #a64d4d;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(1.15);
+}
+
+.day-name {
+    font-size: 12px;
+    /* или меньше, если нужно */
+    font-weight: 600;
+    color: #3a1f1f;
+}
+
+.timer-photo-section {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.timer-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(70%);
+}
+
+.countdown-overlay {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 22px;
+}
+
+#countdown span {
+    font-size: 45px;
+    display: block;
+}
+
+.countdown-title {
+    font-family: 'Marck Script', cursive;
+    font-size: 46px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.hosts {
+    text-align: center;
+    margin-top: 60px;
+    color: #5e3333;
+}
+
+.hosts p {
+    margin-top: 50px;
+    font-size: 45px;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.hosts h2 {
+    font-family: 'Marck Script', cursive;
+    font-size: 60px;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.music-btn {
+    position: fixed;
+    bottom: 90px;
+    right: 90px;
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 70px;
+    font-size: 70px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.music-btn:hover {
+    background-color: #a93226;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+}
+
+
+/* Стили для мобильных устройств */
+@media (max-width: 768px) {
+
+    /* Для экранов шириной 768px и меньше (планшеты и телефоны) */
+    .hero-text p {
+        font-size: 60px;
+        /* Уменьшаем шрифт. Подберите значение, которое вам понравится */
+        /* Возможно, также потребуется немного уменьшить верхний отступ, если текст "слипнется" с "Aina" */
+        /* margin-top: 5px; */
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Для очень узких экранов (маленькие телефоны) */
+    .hero-text p {
+        font-size: 48px;
+        /* Еще немного уменьшаем шрифт. Подберите значение. */
+    }
+}
+
+
+.bottom-image {
+  margin-top: 40px;
+  
+  text-align: center;
+}
+
+.bottom-image img {
+  background-color: none;
+  max-width: 36%;
+  height: auto;
+  border-radius: 34px;
+ 
+}
+
+.center-image {
+  text-align: center; 
+  margin-top: 0px;   
+  margin-bottom: 0px
+}
+
+.center-image img {
+  background-color: none;
+  max-width: 34%;
+  height: auto;
+  border-radius: 34px;
+  background: transparent;
+  box-shadow: none;
+  display: inline-block;
+}
+
+.location-block {
+display: flex; /* Используем Flexbox /
+align-items: center; / Выравниваем по вертикали /
+justify-content: flex-start; / Выравниваем элементы слева /
+gap: 20px; / Расстояние между текстом и котиком */
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.address-text-wrapper {
+flex-grow:1 ; /* Позволяем тексту занимать больше места /
+text-align: left; / Выравниваем текст влево внутри обертки */
+}
+
+.address-text {
+    margin: 0; /* Это правило у вас уже может быть для сброса отступов параграфа */
+    font-size: 40px; /* Попробуйте это значение. Если оно все еще маленькое, увеличьте его, например, до 20px или 22px. */
+    /* Если цвет текста тоже нужно поправить, можете добавить: */
+    /* color: #7a4c4c; */ /* Это пример цвета, который у вас мог использоваться ранее для текста в блоке .details */
+    line-height: 1.6; /* Можно также добавить межстрочный интервал для лучшей читаемости, если строки текста слишком близко друг к другу */
+}
+
+.location-image.cat-right {
+width: 270px; /* Настройте желаемый размер котика /
+height: auto;
+flex-shrink: 0; / Чтобы котик не сжимался */
+}
