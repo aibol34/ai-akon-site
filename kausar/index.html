@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Тойға шақыру!">
+    <meta property="og:description" content="10.07.2025">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczMHm14qfzM1kSn_lR_yrpWGKuR19tfnttd1m10IbVzLbKEcJhsL6DoeSZoXs-fZwSBv7TmB90E15JoRTzQTecHw5bDheyEBsxN8xZ-1r1fjcj40y-6h2y25Hp0PZao9qZ_M2NbYA9N8czX_LBw_QVfv=w1250-h869-s-no-gm?authuser=0" >
+
+
+<link rel="stylesheet"  href="css.css">
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тойға шақыру!</title> 
+
+
+
+<style>
+    
+
+
+@media screen and (max-width: 1280px) {div.contentblock {width: 1200px;} } 
+@media screen and (max-width: 1140px) { div.contentblock {width: 1024px;} } 
+@media screen and (max-width: 992px) { div. contentblock {width: 970px;} } 
+
+
+
+
+
+
+.element-animation{ 
+    top: 0px; 
+    opacity: 0; 
+    position: relative; 
+} 
+.element-animation.element-show{ 
+position: relative; 
+top: 20px; 
+opacity: 1; 
+transition-duration: 1.4s; 
+}
+
+
+
+
+
+
+
+
+
+      .form-inner {
+   position: relative;
+}
+
+}
+.form-inner label {
+   display: block;
+   padding-left: 15px;
+   font-family: 'Roboto', sans-serif;
+   color: rgba(255, 255, 255, .6);
+   text-transform: uppercase;
+   font-size: 15px;
+padding: 0 15px;
+   margin: 10px 0 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+
+  transition: transform 0.3s ease;
+}
+
+/* Стили для кнопки с эффектом при нажатии */
+.btn {
+  transform: scale(1.1); /* Увеличиваем кнопку при активации */
+}
+
+
+
+.form-inner textarea {
+   width: 80%;
+   text-align: center;
+   margin-top: 5px;
+ 
+   border-radius: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 300;
+    background-color: #FFF8F8;
+    border-color: #1d3f57  0.5px;
+    letter-spacing: 0.11em;
+ height: 30px;
+   font-family: 'Roboto', sans-serif;
+  
+}
+
+.form-inner input[type="submit"] {
+    background: linear-gradient(to top left, #5B5E50 0%, #676A5B 100%);
+       width: 80%;
+height: 30PX;
+text-align: center;
+    border: 0;
+    border-bottom: 2px  #aaa;
+       border-radius: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #FFFAF8  ;
+    letter-spacing: 0.11em;
+   font-family: 'Roboto', sans-serif;
+  padding: 0 15px;
+   margin: 10px 0 15px;
+
+}
+.radio-group{
+  text-align: left;
+  width: 80%;
+  font-size: 20px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  color: #585856;
+  color: rgba(88, 88, 86, .7);
+}
+
+
+
+
+
+
+
+
+.conteiner{
+
+  background-size: 100%;
+overflow: hide;
+width: 100%;
+   height: 50%;
+
+}
+.countdown-container {
+    margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 0.7rem;
+      font-weight: 200;
+      line-height: 1.0;
+      -webkit-text-size-adjust: 80%;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      display: flex;
+      justify-content: center;
+     background-color: none;
+}
+
+
+.countdown-item {
+      position: relative;
+      min-width: 40px;
+      margin-left: 10px;
+      margin-right: 10px;
+      padding-bottom: 10px;
+}
+
+    .countdown:not(:last-child)::after {
+      content: ':';
+      position: absolute;
+      right: -15px;
+
+    }
+
+
+.countdown-item span {
+       display: block;
+    font-size: 35px;
+    margin-bottom: 1px;
+    color: #3F3F3F;
+    border-radius: 5px;
+    padding: 5px;
+    animation: pulse 1s ease infinite alternate;
+}
+
+
+
+
+
+
+
+body {
+    background-color:#FFF8F8 ;
+}
+
+</style>
+
+
+
+
+ <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+
+
+
+ <style>
+        /* Стили для модального окна */
+        .modal {
+            display: block; /* Модальное окно отображается сразу */
+            position: fixed;
+            z-index: 9999; /* Модальное окно поверх всех элементов */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Затемнённый фон */
+        }
+        .modal-content {
+            background-color: #FFF8F8;
+            margin: 30% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: center;
+        }
+             .kk{
+          width: 100%;
+          height: 100%;
+     }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #FFF8F8;
+            border-radius: 30px;
+            border-color: #5B5B5B;
+        }
+        /* Отключение скроллинга страницы */
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+
+
+</head>
+<body>
+
+
+
+
+<div class="fade-in" id="content">
+<img src="ykykuk.jpg" style="width: 100%; height: 100%;" loading="eager">
+</div>
+
+
+
+
+
+
+
+
+<center>
+<div class="element-animation"> 
+<img src="ggggggggg.jpg" style="width: 100%; margin-top: 0px;">
+</div></center>
+
+
+
+
+
+
+
+<center>
+<div class="element-animation"> <a href="https://go.2gis.com/VkIvq">
+<img src="hhhhh.jpg" style="width: 100%; margin-top: 20px;margin-bottom: -2px;"></a>
+</div></center>
+
+
+
+
+
+<center>
+<div class="element-animation"> 
+<img src="jykk.jpg" style="width: 100%; margin-bottom: 25px;"  >
+
+</div></center>
+
+
+
+<center>
+<div class="element-animation">
+ <a href="https://t.me/+qaCgI5KL1XZiNjgy">
+<img src="ykum.jpg" style="width: 100%;margin-top: 50px; margin-bottom: 30px;"></a>
+
+</div></center>
+
+<center>
+<div class="countdown-container" style="margin-top:10px;">
+    <div class="countdown-item" style="margin-bottom: 30px;">
+        <span id="days"></span>
+        <span style="font-size: 17px;text-align: center;">күн</span>
+    </div><h2 style="margin-top:3px; size: 30px;">:</h2>
+    <div class="countdown-item">
+        <span id="hours"></span>
+        <span style="font-size: 17px;text-align: center;">сағат</span>
+    </div><h2 style="margin-top:3px; size: 30px;">:</h2>
+    <div class="countdown-item">
+        <span id="minutes"></span>
+        <span style="font-size: 17px;text-align: center;text-align: center;">минут</span>
+    </div><h2 style="margin-top:3px; size: 30px;">:</h2>
+    <div class="countdown-item">
+        <span id="seconds"></span>
+        <span style="font-size: 17px;text-align: center;">секунд</span>
+    </div>
+</div>
+
+</center>
+
+
+
+
+
+
+
+
+
+
+
+<center>
+<div class="element-animation"> 
+<img src="uiliul.jpg" style="width: 100%;margin-top: 50px; margin-bottom: 10px;"  >
+
+</div></center>
+
+
+
+<center style="margin-top: 0px;">
+<form method="post" action="https://script.google.com/macros/s/AKfycbwiZ8n1xWTVos-1A36VUuIS4tC4xuh8EpJ0zn9LLXPz6Ila73dl1wnxnmAKOfSsNLyvQQ/exec" id="form" class="transparent">
+  <div class="form-inner">
+    <div class="radio-group">
+      <input type="radio" id="answer1" name="attendance" value="Иә барамын" required>
+      <label for="answer1">Иә барамын</label><br>
+
+      <input type="radio" id="answer2" name="attendance" value="Жұбайыммен барамын" required>
+      <label for="answer2">Жұбайыммен барамын</label><br>
+
+      <input type="radio" id="answer3" name="attendance" value="Бара алмаймын" required>
+      <label for="answer3">Бара алмаймын</label>
+    </div>
+
+    <textarea
+      name="name"
+      required
+      maxlength="100"
+      cols="30"
+      rows="4"
+      placeholder="Есіміңізді жазыңыз"></textarea>
+
+    <input type="submit" value="Жіберу" style="color:white;" class="btn">
+  </div>
+</form>
+
+</center>
+
+
+
+
+
+
+
+
+
+
+
+<img src="tjhj.jpg" style="width:100%; margin-top:80px; ">
+
+
+
+
+<!-- Модальное окно -->
+<div id="musicModal" class="modal">
+    <div class="modal-content">
+        <img src="vtyt.jpg">
+        <button id="playMusic" style="color:black;">Шақыртуды ашу</button>
+    </div>
+</div>
+
+<audio id="backgroundMusic" loop>
+    <source src="Dombyra.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает воспроизведение музыки.
+</audio>
+
+<script async>
+    // Получаем модальное окно, кнопку и аудио
+    var modal = document.getElementById("musicModal");
+    var playButton = document.getElementById("playMusic");
+    var audio = document.getElementById("backgroundMusic");
+
+    // При нажатии на кнопку включаем музыку и закрываем модальное окно
+    playButton.onclick = function() {
+        audio.play();
+        closeModal();
+    };
+
+    // Функция для закрытия модального окна и разблокировки сайта
+    function closeModal() {
+        modal.style.display = "none";  // Скрываем модальное окно
+        document.body.classList.remove("modal-open"); // Включаем прокрутку
+    }
+</script>
+
+
+
+
+<script>
+  const form = document.querySelector("#form");
+
+  form.addEventListener("submit", async (ev) => {
+    ev.preventDefault();
+
+    const attendance = document.querySelector('input[name="attendance"]:checked');
+    const name = document.querySelector('textarea[name="name"]');
+
+    if (!attendance || !name.value.trim()) {
+      alert("Барлық жолдарды толтырыңыз");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("attendance", attendance.value);
+    formData.append("name", name.value.trim());
+
+    // Очистим поля
+    name.value = '';
+    attendance.checked = false;
+
+    // Отправим данные
+    await fetch("https://script.google.com/macros/s/AKfycbwiZ8n1xWTVos-1A36VUuIS4tC4xuh8EpJ0zn9LLXPz6Ila73dl1wnxnmAKOfSsNLyvQQ/exec", {
+      method: "POST",
+      body: formData,
+      mode: "no-cors"
+    });
+
+    // Покажем сообщение на странице
+    const thankYou = document.createElement("div");
+    thankYou.textContent = "Жауабыңызға рахмет!";
+    thankYou.style.cssText = `
+      color: #3F3F3F;
+      font-size: 24px;
+      margin-top: 20px;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    `;
+
+    form.parentNode.insertBefore(thankYou, form.nextSibling);
+
+    // Или скрой саму форму (по желанию)
+    // form.style.display = "none";
+  });
+</script>
+
+
+
+
+
+  <script async>
+    document.addEventListener("DOMContentLoaded", function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      var elements = document.querySelectorAll(".fade-in");
+      elements.forEach(function(element) {
+        observer.observe(element);
+      });
+    });
+  </script>
+
+
+<script async>
+     function onEntry(entry) { 
+      entry.forEach(change => { 
+        if (change.isIntersecting) { 
+         change.target.classList.add('element-show'); 
+         
+        } 
+      }); 
+    } 
+        let options = { 
+      threshold: [0.5] }; 
+    let observer = new IntersectionObserver(onEntry, options); 
+    let elements = document.querySelectorAll('.element-animation'); 
+     
+    for (let elm of elements) { 
+      observer.observe(elm); 
+    }
+</script>
+
+
+
+
+
+
+
+<script async>
+
+    document.addEventListener('DOMContentLoaded', function() {
+    function updateCountdown() {
+        const endDate = new Date("July 10, 2025 19:00:00").getTime();
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        if (distance < 0) {
+            clearInterval(timerInterval);
+            document.getElementById("days").innerText = "00";
+            document.getElementById("hours").innerText = "00";
+            document.getElementById("minutes").innerText = "00";
+            document.getElementById("seconds").innerText = "00";
+        }
+    }
+
+    const timerInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+});
+
+</script>
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https: //fonts.googleapis.com/css2?family= Piazzolla :wght@100 & display=swap" rel="stylesheet">
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" async></script>
+</body>
+</html>
