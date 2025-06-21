@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QadamDapp</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" type="image/svg" href="/static/logo/logo_q.svg" style="width: 34;">
+</head>
+<script>
+  fetch('/static/html/header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+  fetch('/static/html/footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+
+    fetch('header.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('header-placeholder').innerHTML = data;
+
+    // Даем время DOM обновиться (или используй MutationObserver для 100% уверенности)
+    setTimeout(() => {
+      const header = document.querySelector('.dark-header');
+      const placeholder = document.getElementById('header-placeholder');
+
+      // Создаём плейсхолдер для компенсации "прыжка" (если ещё не создан)
+      let headerSpacer = document.getElementById('header-spacer');
+      if (!headerSpacer) {
+        headerSpacer = document.createElement('div');
+        headerSpacer.id = 'header-spacer';
+        headerSpacer.style.height = header.offsetHeight + 'px';
+        headerSpacer.style.display = 'none';
+        placeholder.parentNode.insertBefore(headerSpacer, placeholder.nextSibling);
+      }
+
+      window.addEventListener('scroll', () => {
+        const headerRect = header.getBoundingClientRect();
+        // Как только хедер скроется вверх — фиксируем
+        if (window.scrollY > placeholder.offsetTop) {
+          header.classList.add('sticky');
+          headerSpacer.style.display = 'block'; // чтобы не прыгал контент
+        } else {
+          header.classList.remove('sticky');
+          headerSpacer.style.display = 'none';
+        }
+      });
+    }, 10);
+  });
+
+
+
+
+</script>
+
+
+
+<body>
+  <section id="intro">
+    <canvas id="starfield"></canvas>
+    
+    <!-- центрированный текст -->
+    <div id="center-text">
+      <span id="icon">
+        <img src="/static/logo/q.svg" alt="icon" height="100" width="100" />
+      </span>
+      <span id="typed-text"></span>
+    </div>
+  </section>
+  <div id="header-placeholder"></div>
+
+  <section class="first-step-section">
+    <div class="first-step-container">
+      <div class="first-step-text">
+        <h2>Твой первый шаг к профессии!</h2>
+        <p>Найди профессию, которая тебе подходит, на основе твоих интересов, навыков и рынка труда Казахстана.</p>
+      </div>
+      <div class="first-step-img">
+        <img src="/static/logo/raketa.png" alt="Первый шаг к профессии" />
+      </div>
+    </div>
+  </section>
+
+  <section class="fork-section">
+    <div class="center-area">
+        <div class="main-text">Твоя карьера — твой выбор</div>
+        <button class="start-btn" id="startBtn">Начать</button>
+        <!-- SVG ветки -->
+        <svg class="branch-svg" id="branchSvg" viewBox="0 0 350 100">
+          <!-- Левая ветка -->
+          <path class="branch-path" id="pathLeft" d="M175,0 Q175,55 70,100" style="animation-delay:.1s;animation-play-state:paused"/>
+          <!-- Правая ветка -->
+          <path class="branch-path" id="pathRight" d="M175,0 Q175,55 280,100" style="animation-delay:.25s;animation-play-state:paused"/>
+        </svg>
+        <!-- Кнопки выбора -->
+        <div class="choice-row" id="choiceRow">
+          <button  class="choice-btn"><a style="text-decoration: none; color: #fff;" href="/career">Ai навыки</a></button>
+          <button class="choice-btn"><a style="text-decoration: none; color: #fff;" href="/ai-tree">Профориентация с Ai</a></button>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="benefits-section">
+    <h2>Наши преимущества</h2>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <!-- <div class="benefit-icon">🤖</div> -->
+         <img class="benefit-icons" src="/static/icons/microchip-ai.png" alt="ai">
+        <div class="benefit-title">ИИ-анализ</div>
+        <div class="benefit-desc">Используем GPT для анализа интересов, чтобы находить точные рекомендации.</div>
+      </div>
+      <div class="benefit-card">
+        <!-- <div class="benefit-icon">🗺️</div> -->
+         <img class="benefit-icons" src="/static/icons/location.png" alt="map">
+        <div class="benefit-title">Адаптация под рынок РК</div>
+        <div class="benefit-desc">Учитываем реальные вакансии, спрос и зарплаты в Казахстане.</div>
+      </div>
+      <div class="benefit-card">
+        <!-- <div class="benefit-icon">🎯</div> -->
+        <img class="benefit-icons" src="/static/icons/bullseye-arrow(1).png" alt="" >
+        <div class="benefit-title">Индивидуальный подход</div>
+        <div class="benefit-desc">Каждое решение — результат анализа личных ответов студента.</div>
+      </div>
+      <div class="benefit-card">
+        <!-- <div class="benefit-icon">📈</div> -->
+         <img class="benefit-icons" src="/static/icons/arrow-trend-up(1).png" alt="up">
+        <div class="benefit-title">Рост и успех</div>
+        <div class="benefit-desc">Ты находишь профессию, в которой сможешь развиваться и реализовать себя.</div>
+      </div>
+    </div>
+  </section>
+<section class="stats-section" id="stats">
+    <h2>Статистика</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" data-target="12840">0</div>
+        <div class="stat-label">Студентов уже прошли тест</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-target="65">0</div>
+        <div class="stat-label">Рекомендованных профессий</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-target="8200">0</div>
+        <div class="stat-label">Профессий точно совпали с интересами</div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+  .stats-section {
+    text-align: center;
+    padding: 40px 0;
+}
+
+
+
+.partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #111124;
+    border-radius: 24px;
+    padding: 32px 24px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.partners-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.partners-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.partners-track.bottom {
+    margin-bottom: 0;
+}
+
+.partner-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 100px;
+    background: none;
+}
+
+.partner-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s;
+}
+
+.partner-card img:hover {
+    transform: scale(1.1);
+}
+
+  </style>
+  <section class="stats-section" id="stats">
+  <h2>Наши партнеры</h2>
+  <div class="partners">
+    <div class="partners-slider">
+      <div class="partners-track top">
+        <div class="partner-card"><img src="/static/images/4.png" alt="Partner 4"></div>
+        <div class="partner-card"><img src="/static/images/5.png" alt="Partner 5"></div>
+        <div class="partner-card"><img src="/static/images/6.png" alt="Partner 6"></div>
+      </div>
+      <div class="partners-track bottom">
+        <div class="partner-card"><img src="/static/images/2.png" alt="Partner 2"></div>
+        <div class="partner-card"><img src="/static/images/1.png" alt="Partner 1"></div>
+        <div class="partner-card"><img src="/static/images/3.png" alt="Partner 3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ 
+
+<div id="footer-placeholder"></div>
+</body> 
+
+
+<script src="/static/js/canvas.js" defer></script>
+<script>
+    const text = "adamDapp";
+    const typedText = document.getElementById("typed-text");
+    let index = 0;
+  
+    function typeWriter() {
+      if (index < text.length) {
+        typedText.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 150);
+      } else {
+        setTimeout(() => {
+          typedText.innerHTML = "";
+          index = 0;
+          typeWriter();
+        }, 5000);
+      }
+    }
+  
+    window.addEventListener("load", typeWriter);
+
+
+    function showOptions() {
+      document.getElementById('options').classList.add('visible');
+    }
+
+
+    function animateCountUp(el, target, duration = 2000) {
+      let start = 0;
+      const step = Math.ceil(target / (duration / 20.7));
+      const interval = setInterval(() => {
+        start += step;
+        if (start >= target) {
+          el.textContent = target.toLocaleString() + '+';
+          clearInterval(interval);
+        } else {
+          el.textContent = start.toLocaleString();
+        }
+      }, 16.7);
+    }
+
+    let statsAnimated = false;
+
+    window.addEventListener('scroll', () => {
+      const statsSection = document.getElementById('stats');
+      const rect = statsSection.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (!statsAnimated && rect.top < windowHeight - 100) {
+        document.querySelectorAll('.stat-number').forEach(el => {
+          const target = parseInt(el.getAttribute('data-target'), 10);
+          animateCountUp(el, target);
+        });
+        statsAnimated = true;
+      }
+    });
+  </script>
+  <script>
+    const startBtn = document.getElementById('startBtn');
+    const branchSvg = document.getElementById('branchSvg');
+    const branchPaths = branchSvg.querySelectorAll('.branch-path');
+    const choiceRow = document.getElementById('choiceRow');
+
+    let branchesShown = false;
+
+    startBtn.addEventListener('click', () => {
+      if (branchesShown) return; // защита от повторного клика
+      branchesShown = true;
+      // 1. Показываем SVG ветки
+      branchSvg.classList.add('visible');
+      // Включаем анимацию отрисовки для обеих веток
+      branchPaths.forEach(path => path.style.animationPlayState = 'running');
+      // 2. Через 1.2 сек (после прорисовки веток) плавно показываем кнопки
+      setTimeout(() => {
+        choiceRow.classList.add('visible');
+      }, 1100);
+    });
+  </script>
+  <script src="/static/js/partners.js"></script>
+</html>
