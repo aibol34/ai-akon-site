@@ -1,0 +1,209 @@
+<html>
+  <head></head>
+  <body>
+    <style>
+      .form-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .form-content {
+        width: 60%;
+        background-color: #f8f8f8;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .form label {
+        display: block;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 1.2rem;
+        color: #4b3110;
+        margin-bottom: 5px;
+      }
+
+      .form input,
+      .form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #000;
+        border-radius: 20px;
+        font-size: 1rem;
+      }
+
+      .form input:focus,
+      .form textarea:focus {
+        outline: none;
+        border-color: #a0825a;
+      }
+
+      .radio-group label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .radio-group input {
+        margin-right: 10px;
+      }
+
+      .form-submit button {
+        padding: 10px 20px;
+        background-color: #a0825a;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .form-submit button:hover {
+        background-color: #8a6e4a;
+      }
+
+      .telegram-link {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px 30px;
+        background-color: #a0825a;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-family: "Montserrat", Arial, sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .telegram-link:hover {
+        background-color: #8a6e4a;
+      }
+
+      .error-message {
+        color: red;
+        font-size: 0.9rem;
+      }
+
+      .success-message {
+        font-size: 1rem;
+        color: green;
+        text-align: center;
+      }
+    </style>
+    <div class="form-container">
+        <div class="form-content">
+          <form id="send" class="form">
+            <div class="success-message" aria-live="polite" hidden>Хабарлама Жіберілді</div>
+      
+            <div class="form-inputs">
+              <!-- Name Input -->
+              <div class="input-group">
+                <label for="name">Аты-жөніңіз:</label>
+                <input type="text" autocomplete="name" name="Name" id="name" required />
+                <div class="error-message" id="error-name"></div>
+              </div>
+      
+              <!-- Radio Options -->
+              <div class="input-group">
+                <label>Тойға келесіз бе?</label>
+                <div class="radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="Radio"
+                      value="Ия, әрине келеміз"
+                      required
+                    />
+                    Ия, әрине келеміз
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="Radio"
+                      value="Жұбайыммен келемін"
+                      required
+                    />
+                    Жұбайыммен келемін
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="Radio"
+                      value="Өкінішке орай, келе алмаймын"
+                      required
+                    />
+                    Өкінішке орай, келе алмаймын
+                  </label>
+                </div>
+                <div class="error-message" id="error-radio"></div>
+              </div>
+      
+              <!-- Textarea Input -->
+              <div class="input-group">
+                <label for="wish">Тойға тілегіңіз:</label>
+                <textarea name="Тойға тілегіңіз" id="wish" rows="3" required></textarea>
+                <div class="error-message" id="error-wish"></div>
+              </div>
+      
+              <!-- Submit Button -->
+              <div class="form-submit">
+                <button type="submit">Жіберу</button>
+              </div>
+      
+              <!-- Telegram Link -->
+              <a href="https://t.me/+9M9yWS8Cf3w4ZTEy" class="telegram-link">
+                Той фотолары
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <script>
+        document.getElementById("send").addEventListener("submit", async function (e) {
+          e.preventDefault(); // Останавливаем стандартное поведение формы
+      
+          const name = document.getElementById("name").value;
+          const radio = document.querySelector("input[name='Radio']:checked")?.value;
+          const wish = document.getElementById("wish").value;
+      
+          if (!name || !radio || !wish) {
+            alert("Барлық өрістерді толтырыңыз!");
+            return;
+          }
+      
+          const message = `
+          📝 Жаңа жауап:
+          👤 Аты-жөні: ${name}
+          ✅ Тойға қатысу: ${radio}
+          🎉 Тілек: ${wish}
+          `;
+      
+          const TELEGRAM_BOT_TOKEN = "7396225802:AAGqLtjiCdJBPQLaoltzJVN37HNWILcl0LE";
+          const CHAT_ID = "-1002499636922";
+      
+          try {
+            const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ chat_id: CHAT_ID, text: message }),
+            });
+      
+            if (response.ok) {
+              document.querySelector(".success-message").hidden = false;
+              alert("Хабарлама жіберілді!");
+            } else {
+              throw new Error("Хабарлама жіберу қателігі!");
+            }
+          } catch (error) {
+            alert("Қате: " + error.message);
+          }
+        });
+      </script>
+      
+  </body>
+</html>

@@ -1,0 +1,566 @@
+@media (max-width:2560px) {
+    .un-text {
+        font-size: 190px;
+    }
+
+    .bg,
+    .intro,
+    .auen,
+    .shakiry,
+    .gul-animation,
+    .container,
+    .toi-kuni,
+    .element,
+    .orny,
+    .hidden-map,
+    .toigadein,
+    .kanal,
+    .toi-ieleri,
+    .toiga-katisu,
+    .toiga-katisu1{
+        display: none;
+    }
+}
+
+@media (max-width:1440px) {
+    .un-text {
+        font-size: 100px;
+    }
+
+    .bg {
+        display: none;
+    }
+}
+
+@media (max-width:1200px) {
+    .un-text {
+        font-size: 80px;
+    }
+
+}
+
+@media (max-width:768px) {
+    .un-text {
+        font-size: 60px;
+    }
+}
+
+@media (max-width:431px) {
+
+    /* ХАБАРЛАМА */
+    .unsupported {
+        display: none;
+    }
+
+    /* Разрешение */
+    .bg,
+    .intro,
+    .auen,
+    .shakiry,
+    .gul-animation,
+    .container,
+    .toi-kuni,
+    .element,
+    .orny,
+    .hidden-map,
+    .toigadein,
+    .kanal,
+    .toi-ieleri,
+    .toiga-katisu,
+    .toiga-katisu1{
+        display: block;
+    }
+
+    /* Интро */
+    .intro-text {
+        left: 10%;
+        top: 22%;
+    }
+
+
+    .kizdin-aty {
+        font-size: 6em;
+    }
+    .uzaty-text {
+        font-size: 3.8em;
+    }
+    .uzaty-kuni {
+        font-size: 3.5em;
+    }
+
+    .kiz-suret {
+        width: 80%;
+    }
+
+    /* Music */
+
+    /* Тойға шақыру текст */
+    .konak p {
+        font-size: 3.2em;
+    }
+
+    .shakiru-text p {
+        font-size: 1.3em;
+    }
+
+    /* toi uakiti */
+    .toi {
+        font-size: 3.2em;
+    }
+
+    .uakit {
+        font-size: 1.8em;
+    }
+
+    /* calendar */
+    /* Календарь */
+    .calendar th,
+    .calendar td {
+        font-size: 20px;
+    }
+
+    /* toi kuni */
+    .toi {
+        font-size: 3.2em;
+    }
+
+    .data {
+        width: 250px;
+        font-size: 1.4em;
+    }
+
+    /* otkiziletin orny */
+    .otkiz {
+        font-size: 3.2em;
+    }
+
+    .adress {
+        font-size: 1.2em;
+    }
+
+    .toikhana {
+        font-size: 3em;
+    }
+
+    /* map */
+    .button {
+        font-size: 1.2em;
+    }
+
+    /* timer */
+    .dein {
+        font-size: 3.2em;
+        margin-top: 25px;
+    }
+
+    #time {
+        font-size: 1.5em;
+    }
+
+    .block span {
+        font-size: 0.8em;
+    }
+
+    .finished-message {
+        width: 300px;
+        font-size: 1em;
+    }
+
+    /* telegram */
+    .kanal-text {
+        font-size: 1.2em;
+    }
+
+    .kanal-text1 {
+        font-size: 1em;
+    }
+
+    /* toi ieleri */
+    .toi-text h1 {
+        font-size: 3.2em;
+    }
+
+    .toi-text h2 {
+        font-size: 2em;
+    }
+
+    /* anketa */
+    .katisu {
+        font-size: 1.5em;
+    }
+    .katisu_uakit {
+        font-size: 1.1em;
+    }
+
+    .kiwi {
+        font-size: 0.8em;
+    }
+
+    input[type="text"] {
+        font-size: 1.1em;
+    }
+
+    input[type="text"]:focus {
+        font-size: 1.1em;
+    }
+
+    label {
+        font-size: 1.1em;
+    }
+
+    .radio-group label {
+        font-size: 1em;
+    }
+
+    input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+    }
+
+    input[type="submit"] {
+        font-size: 1em;
+    }
+
+    .rakhmet {
+        font-size: 1em;
+    }
+
+    /* kadirli */ 
+    .katisu1 {
+        font-size: 3em;
+    }
+}
+
+
+@media (max-width:376px) {
+    /* Интро */
+    .intro-text {
+        left: 10%;
+        top: 30%;
+    }
+
+
+    .kizdin-aty {
+        font-size: 5.5em;
+    }
+    .uzaty-text {
+        font-size: 3.5em;
+    }
+    .uzaty-kuni {
+        font-size: 3em;
+    }
+
+    .kiz-suret {
+        width: 80%;
+    }
+
+    .kiz-suret img {
+        height: 60vh;
+    }
+
+    /* Music */
+
+    /* Тойға шақыру текст */
+    .konak p {
+        font-size: 3.2em;
+    }
+
+    .shakiru-text p {
+        font-size: 1.3em;
+    }
+
+    /* toi uakiti */
+    .toi {
+        font-size: 3.2em;
+    }
+
+    .uakit {
+        font-size: 1.8em;
+    }
+
+    /* calendar */
+    /* Календарь */
+    .calendar th,
+    .calendar td {
+        font-size: 20px;
+    }
+
+    /* toi kuni */
+    .toi {
+        font-size: 3.2em;
+    }
+
+    .data {
+        width: 250px;
+        font-size: 1.4em;
+    }
+
+    /* otkiziletin orny */
+    .otkiz {
+        font-size: 3.2em;
+    }
+
+    .adress {
+        font-size: 1.2em;
+    }
+
+    .toikhana {
+        font-size: 3em;
+    }
+
+    /* map */
+    .button {
+        font-size: 1.2em;
+    }
+
+    /* timer */
+    .dein {
+        font-size: 3.2em;
+        margin-top: 25px;
+    }
+
+    #time {
+        font-size: 1.4em;
+    }
+
+    .block span {
+        font-size: 0.9em;
+    }
+
+    .finished-message {
+        font-size: 1em;
+    }
+
+    /* telegram */
+    .kanal-text {
+        font-size: 1.2em;
+    }
+
+    .kanal-text1 {
+        font-size: 1em;
+    }
+
+    /* toi ieleri */
+    .toi-text h1 {
+        font-size: 3.2em;
+    }
+
+    .toi-text h2 {
+        font-size: 2em;
+    }
+
+    /* anketa */
+    .katisu {
+        font-size: 1.3em;
+    }
+    .katisu_uakit {
+        font-size: 1.1em;
+    }
+
+    .kiwi {
+        font-size: 0.8em;
+    }
+
+    input[type="text"] {
+        font-size: 1.1em;
+    }
+
+    input[type="text"]:focus {
+        font-size: 1.1em;
+    }
+
+    label {
+        font-size: 1.1em;
+    }
+
+    .radio-group label {
+        font-size: 1em;
+    }
+
+    input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+    }
+
+    input[type="submit"] {
+        font-size: 1em;
+    }
+
+    .rakhmet {
+        font-size: 1em;
+    }
+
+    /* kadirli */ 
+    .katisu1 {
+        font-size: 3em;
+    }
+}
+
+@media (max-width:321px) {
+    /* Интро */
+    .intro-text {
+        left: 7%;
+        top: 21%;
+    }
+
+    .kizdin-aty {
+        font-size: 5em;
+    }
+
+    .uzaty-text {
+        font-size: 3.3em;
+    }
+
+    .uzaty-kuni {
+        font-size: 2.8em;
+    }
+
+    .kiz-suret {
+        width: 80%;
+    }
+
+    .kiz-suret img {
+        height: 70vh;
+    }
+
+    /* Тойға шақыру текст */
+    .konak p {
+        font-size: 3em;
+    }
+
+    .shakiru-text p {
+        font-size: 1.1em;
+    }
+
+    /* toi uakiti */
+    .uakit {
+        font-size: 1.7em;
+    }
+
+    /* calendar */
+    /* Календарь */
+    .calendar th,
+    .calendar td {
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    /* toi kuni */
+    .toi {
+        font-size: 2.8em;
+    }
+
+    .data {
+        width: 250px;
+        font-size: 1.4em;
+    }
+
+    /* otkiziletin orny */
+    .otkiz {
+        font-size: 2.8em;
+    }
+
+    .adress {
+        font-size: 1em;
+    }
+
+    .toikhana {
+        font-size: 2.5em;
+    }
+
+    /* map */
+    .button {
+        font-size: 1.2em;
+    }
+
+    /* timer */
+    .dein {
+        font-size: 2.8em;
+        margin-top: 25px;
+    }
+
+    #time {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+
+    }
+
+    .block span {
+        font-size: 0.8em;
+    }
+
+    .finished-message {
+        width: 150px;
+        font-size: 0.8em;
+    }
+
+    /* telegram */
+    .kanal-text {
+        font-size: 1em;
+    }
+
+    .kanal-text1 {
+        font-size: 1em;
+    }
+
+    /* toi ieleri */
+    .toi-text h1 {
+        font-size: 2.8em;
+    }
+
+    .toi-text h2 {
+        font-size: 1.8em;
+    }
+
+    /* anketa */
+    .katisu {
+        font-size: 1.3em;
+    }
+    .katisu_uakit {
+        font-size: 1.1em;
+    }
+
+    .kiwi {
+        font-size: 0.8em;
+    }
+
+    input[type="text"] {
+        font-size: 1.1em;
+    }
+
+    input[type="text"]:focus {
+        font-size: 1.1em;
+    }
+
+    label {
+        font-size: 1.1em;
+    }
+
+    .radio-group label {
+        font-size: 1em;
+    }
+
+    input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+    }
+
+    input[type="submit"] {
+        font-size: 1em;
+    }
+
+    .rakhmet {
+        font-size: 1em;
+    }
+
+    /* kadirli */ 
+    .katisu1 {
+        font-size: 2.5em;
+    }
+}

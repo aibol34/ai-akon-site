@@ -1,0 +1,784 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* outline: 1px solid red; */
+}
+
+@font-face {
+    font-family: itc;
+    src: url(../fonts/Kz_ITC-New-Veljovic-DS-Pro-Book-It_kz.otf), format(otf);
+}
+
+@font-face {
+    font-family: caronthia;
+    src: url(../fonts/KZCorinthia.ttf), format(ttf);
+}
+
+/* Хабарлама */
+.unsupported {
+    display: none;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/unsupported.jpg) center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.un-text {
+    font-family: 'caronthia';
+    font-size: 80px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+/* фон */
+/* Фон */
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/bg.jpg) center/cover no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -10;
+}
+
+/* Intro */
+.intro {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+}
+
+
+  
+.intro-fon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.intro-fon img {
+    width: 100%;
+    height: 100%;
+}
+
+.intro-text {
+    position: absolute;
+    left: 40px;
+    top: 120px;
+    width: 80%;
+}
+
+.kizdin-aty {
+    font-family: 'caronthia';
+    text-align: center;
+    width: 100%;
+}
+.uzaty-text {
+    font-family: 'caronthia';
+    width: 80%;
+}
+.uzaty-kuni {
+    font-family: 'caronthia';
+    width: 100%;
+}
+
+.kiz-suret {
+    height: 100vh; 
+    width:80%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -2;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.kiz-suret img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0%);
+    width: 100%;
+    height: 70vh;
+}
+
+/* auen */
+.auen {
+    position: fixed;
+    left: 40%;
+    right: 0;
+    bottom: 50px;
+    width: 100px;
+    z-index: 9999;
+}
+
+.playStopBtn {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: 'itc';
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* .playStopBtn:hover {
+    background-color: #c5c5c5;
+    transform: scale(1.1);
+} */
+
+.playStopBtn:active {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Shakiry */
+/* Shakiry */
+.shakiry {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+}
+
+.konak {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.konak p {
+    font-family: 'caronthia';
+    font-weight: normal;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.shakiru-text p {
+    font-family: 'itc';
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* Элемент анимация */
+.gul-animation {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.gul-animation img {
+    width: 100%;
+    animation: gul 5s infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes gul {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.toi-kuni {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.toi {
+    font-family: 'caronthia';
+    margin-bottom: 10px;
+}
+
+.uakit {
+    font-family: 'itc';
+}
+
+/* Календарь */
+.container {
+    max-width: 80%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.calendar {
+    margin-top: 20px;
+}
+
+.calendar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+    font-family: 'Montserrat';
+    width: 14.28%;
+    text-align: center;
+    padding: 5px;
+}
+
+.calendar .selected {
+    border-radius: 50%;
+    position: relative;
+}
+
+.calendar .selected img {
+    width: 20x;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: heart-beat 3s infinite;
+}
+
+/* Анимация для сердечка */
+@keyframes heart-beat {
+    0% {
+        transform: translate(-50%, -50%) scale(2);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) scale(2.5);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(2);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) scale(2.5);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+
+/* ТОЙ КҮНІ */
+.toi-kuni {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.toi,
+.data {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.toi {
+    font-family: 'caronthia';
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.data {
+    font-family: 'itc';
+    width: 300px;
+    margin-bottom: 15px;
+    animation: data-text 6s infinite ease-in-out;
+}
+
+@keyframes data-text {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* element */
+.element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.element  img {
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Өткізілетін орны */
+.orny {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.otkiz {
+    width: 100%;
+    font-family: 'caronthia';
+    margin-bottom: 10px;
+}
+
+.adress {
+    font-family: 'itc';
+    margin-bottom: 10px;
+}
+
+.toikhana {
+    font-family: 'caronthia';
+}
+
+.gis {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.gis img {
+    width: 50%;
+}
+
+/* karta */
+.map {
+    border-top: 1px solid #a3a3a3;
+    box-shadow: 0 5px 10px #000;
+    width: 100%;
+}
+
+.map iframe {
+    margin: 0 auto;
+    width: 100%;
+    height: 40vh;
+}
+
+
+/* Knopka */
+.button {
+    max-width: 100%;
+    width: 200px;
+    align-items: center;
+    appearance: none;
+    background-color: #EEF2FF;
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: #000;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 2px 4px, rgba(0, 0, 0, 0.15) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: 'itc';
+    height: 35px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 24px;
+    padding-right: 24px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    margin-bottom: 20px;
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(83, 109, 254, 0.4) 0 2px 4px, rgba(83, 109, 254, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button:hover {
+    box-shadow: rgb(0, 0, 0) 0 4px 8px, rgba(0, 0, 0, 0.2) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.hidden-map {
+    text-align: center;
+    width: 100%;
+}
+
+#map {
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+#map.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Таймер */
+.toigadein {
+    margin-bottom: 15px;
+}
+
+.dein {
+    font-family: 'caronthia';
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+
+.toi-uakit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#time {
+    width: 100%;
+    height: 10vh;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    font-family: 'itc';
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.block span {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.days {
+    margin-right: 25px;
+}
+
+.hours {
+    margin-right: 25px;
+}
+
+.minutes {
+    margin-right: 25px;
+}
+
+.finished-message {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    animation: message 6s ease-in-out infinite;
+}
+
+@keyframes message {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+/* Канал телеграм */
+.kanal {
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.kanal-text {
+    font-family: 'itc';
+    margin-bottom: 20px;
+}
+
+.kanal-text1 {
+    font-family: 'itc';
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* knopka */
+.telegram-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #0088cc;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 5px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.telegram-button:hover {
+    background-color: #0077b5;
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.telegram-button:active {
+    transform: scale(1.1);
+    background-color: #0077b5;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для иконки */
+.telegram-button i {
+    margin-right: 15px;
+    font-size: 22px;
+    /* Размер иконки */
+    transition: transform 0.7s ease;
+}
+
+.telegram-button:active i {
+    transform: translateX(10px);
+    /* Двигаем иконку при наведении */
+}
+
+/* Анимация кнопки при появлении */
+.telegram-button {
+    animation: buttonAnimation 3s ease-out forwards;
+}
+
+@keyframes buttonAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Той иелері */
+.toi-ueleri {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.toi-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.toi-text h1 {
+    font-family: 'caronthia';
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.toi-text h2 {
+    font-family: 'itc';
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+/* Тойға қатысу */
+.toiga-katisu {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 300px;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.toiga-katisu p {
+    font-family: 'itc';
+    text-align: center;
+}
+
+.katisu,
+.katisu_uakit {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.katisu {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.katisu_uakit {
+    margin-bottom: 20px;
+}
+
+.katisu_uakit span{
+    font-weight: bold;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'itc';
+    box-sizing: border-box;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    font-family: 'itc';
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    color: #333;
+    font-family: 'itc';
+}
+
+.radio-group {
+    text-align: left;
+}
+
+.radio-group label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+input[type="radio"] {
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    max-width: 150px;
+    margin-top: 20px;
+    margin-left: 65px;
+    background-color: rgb(216, 216, 216);
+    color: #000;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="submit"]:active {
+    transform: scale(1.1);
+    background-color: rgb(182, 182, 182);
+}
+
+
+.rakhmet {
+    font-family: 'itc';
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+#sendText {
+    color: #000;
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+/* kadirli konak */
+.toiga-katisu1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.katisu1 {
+    font-family: 'caronthia';
+    font-weight: 500;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}

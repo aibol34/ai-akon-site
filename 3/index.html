@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аружан қыз ұзату</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/adaptive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Хабарлама -->
+    <div class="unsupported">
+        <p class="un-text">
+            Онлайн шақырту бұл құрылғыға қолжетімсіз!
+        </p>
+    </div>
+
+    <!-- Задний фон -->
+    <div class="bg">
+        <!-- <img src="../2 дизайн/images/bg.jpeg" alt=""> -->
+    </div>
+
+    <!-- Music -->
+
+    <!-- Intro -->
+    <div class="intro">
+        <div class="intro-fon"><img src="images/element1.png" alt=""></div>
+        <div class="intro-text">
+            <p class="kizdin-aty">Аружан</p>
+            <p class="uzaty-text">Қыз ұзату</p>
+            <p class="uzaty-kuni">19.01.2025</p>
+        </div>
+        <div class="kiz-suret"><img src="images/kiz.png" alt=""></div>
+    </div>
+
+    <div class="auen">
+        <button id="playStopBtn" class="playStopBtn">әуенді қосу</button>
+        <audio id="audio" src="music/қыз ұзату4.mp3"></audio>
+    </div>
+
+    <!-- SHAKIRY TEXT -->
+    <div class="shakiry" id="shakiry">
+        <div class="konak">
+            <p>Құрметті қонақтар!</p>
+        </div>
+        <div class="shakiru-text">
+            <p>
+                Сіз(дер)ді аяулы қызымыз Аружанның ұзатылу тойына арналған салтанатты дастарханымыздың қадірлі қонағы
+                болуға шақырамыз!
+            </p>
+        </div>
+    </div>
+
+    <!-- Анимация элемент -->
+    <div class="gul-animation"><img src="images/element2.png" alt=""></div>
+
+    <!-- Басталу уақыты -->
+    <div class="toi-kuni">
+        <p class="toi">Басталу уақыты</p>
+        <p class="uakit">Сағат 19:00</p>
+    </div>
+
+    <!-- Календарь -->
+    <div class="container">
+        <div class="calendar">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Пн</th>
+                        <th>Вт</th>
+                        <th>Ср</th>
+                        <th>Чт</th>
+                        <th>Пт</th>
+                        <th>Сб</th>
+                        <th>Вс</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td class="selected"><img src="images/heart_bg.png" alt=""> 19</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- Той күні -->
+    <div class="toi-kuni">
+        <p class="toi">Той күні</p>
+        <p class="data">19 қаңтар 2025 жыл</p>
+    </div>
+
+    <div class="element">
+        <img src="images/element3.png" alt="">
+    </div>
+
+    <!-- Өткізілетін орны -->
+    <div class="orny">
+        <p class="otkiz">Мекен-жайымыз:</p>
+        <p class="adress">Түркістан қаласы, <br> Коммунизм шағын ауданы</p>
+        <p class="toikhana">"Khan Saray Grand Hall"</p>
+        <p class="prosto"></p>
+        <div class="gis">
+            <a href="https://go.2gis.com/v7UE3" target="_blank">
+                <img src="images/2gis.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <!-- Карта -->
+    <div class="hidden-map">
+        <button class="button" id="button" role="button">Картадан көру</button>
+        <div class="map" id="map">
+            <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae76efd8cca2b20e12423440aaf6ed533b655e3f4c81d3f899c5e98026cc2ace5&amp;source=constructor"
+                frameborder="0">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Таймер -->
+    <div class="toigadein">
+        <p class="dein">Тойға дейін:</p>
+        <div id="time"></div>
+    </div>
+
+
+    <!-- Телеграм канал -->
+    <div class="kanal" id="kanal">
+        <p class="kanal-text">Құрметті қонақтар, <span class="bold">той фотоларын</span> телеграм каналдан ала
+            аласыздар!</p>
+
+        <a href="https://t.me/aitzhanssss" target="_blank" class="telegram-button">
+            <i class="fab fa-telegram-plane"></i><span class="kanal-text1">Telegram каналға өту</span>
+        </a>
+    </div>
+
+    <!-- element -->
+    <div class="element">
+        <img src="images/element3.png" alt="">
+    </div>
+
+    <!-- Той иелері текст -->
+    <div class="toi-ueleri">
+        <div class="toi-text">
+            <h1>Той иелері</h1>
+            <h2>Қуаныш-Ұлболсын</h2>
+        </div>
+    </div>
+
+    <!-- Анимация элемент -->
+    <div class="gul-animation"><img src="images/element2.png" alt=""></div>
+
+
+    <!-- Анкета -->
+    <div class="toiga-katisu">
+        <p class="katisu">Тойға қатысуыңызды растауыңызды сұраймыз!</p>
+        <p class="katisu_uakit">
+            Жауабыңызды <span>17 .01.2025 ж.</span> дейін күтеміз
+            <br>
+           <span class="kiwi">(Анкетаны толтырып, жіберген соң төменде пайда болатын хабарламаны күтіңіз!)</span>  
+        </p>
+
+        <form action="#" name="submit-to-google-sheet">
+            <label for="name3">Аты-жөніңіз</label>
+            <input type="text" name="name3" id="name3">
+
+            <label for="jubai3">Жұбайыңыздың есімі (егер бар болса)</label>
+            <input type="text" name="jubai3" id="jubai3">
+
+            <label for="jevap3">Тойға келесіз бе?</label>
+            <div class="radio-group">
+                <label for="jevap3"><input type="radio" name="jevap3" id="jevap3" value="иә">Иә, әрине келеміз</label>
+                <label for="jevap3"><input type="radio" name="jevap3" id="jevap3" value="жалғыз өзім">Жалғыз өзім
+                    келемін</label>
+                <label for="jevap3"><input type="radio" name="jevap3" id="jevap3" value="жоқ">Өкінішке орай келе
+                    алмаймын</label>
+            </div>
+
+            <input type="submit" value="жіберу">
+            <span id="sendText"></span>
+        </form>
+    </div>
+
+
+    <!-- Тойға қатысу үшін анкета -->
+    <div class="toiga-katisu1" id="anketa">
+        <p class="katisu1">Қуанышымыздың қадірлі қонағы болыңыздар!</p>
+    </div>
+
+
+    <script>
+        // Music player
+        document.addEventListener('DOMContentLoaded', function () {
+            // Получаем элементы кнопки и аудио
+            const playStopBtn = document.getElementById('playStopBtn');
+            const audio = document.getElementById('audio');
+
+            // Функция для переключения между состояниями "Play" и "Stop"
+            playStopBtn.addEventListener('click', function () {
+                console.log("Кнопка нажата!"); // Для отладки
+                if (audio.paused || audio.ended) {
+                    audio.play(); // Воспроизведение музыки
+                    playStopBtn.textContent = 'ТОҚТАТУ'; // Меняем текст кнопки на "Stop"
+                    console.log("Музыка запущена!"); // Для отладки
+                } else {
+                    audio.pause(); // Остановка музыки
+                    playStopBtn.textContent = 'ӘУЕНДІ ҚОСУ'; // Меняем текст кнопки на "Play"
+                    console.log("Музыка остановлена!"); // Для отладки
+                }
+            });
+        });
+
+        // hidden map
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.getElementById('button');
+            const content = document.getElementById('map');
+
+            toggleButton.addEventListener('click', function () {
+                // Переключаем класс для анимации показа/скрытия контента
+                if (content.classList.contains('show')) {
+                    content.classList.remove('show');
+                    setTimeout(() => {
+                        content.style.display = 'none'; // Ждем завершения анимации перед скрытием
+                    }); // Тайм-аут равен времени анимации
+                } else {
+                    content.style.display = 'block'; // Показываем элемент перед анимацией
+                    setTimeout(() => {
+                        content.classList.add('show');
+                    }, 10); // Небольшая задержка для запуска анимации
+                }
+            });
+        });
+
+        // Таймер
+        // Set the date we're counting down to
+        var countDownDate = new Date("January 21, 2025 00:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes, and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("time").innerHTML = "<div class='toi-uakit'><div class='days block'>" + days + "<br><span>күн</span></div>" + "<div class='hours block'>" + hours + "<br><span>сағат</span></div>" + "<div class='minutes block'>" + minutes + "<br><span>минут</span></div>" + "<div class='seconds block'>" + seconds + "<br><span>секунд</span></div></div>";
+
+            // If the countdown is over, display some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("time").innerHTML = "<div class='finished-message'>Үйлену салтанаты өз мәресіне жетті!</div>";
+            }
+        }, 1000);
+
+        // Anketa
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz6EA4j2KCXY8Y61rOOmMBxsgmzIgpGpiNqkCamsjfqpgPJBhszJ9-cwJvKiwYEUfOZuw/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const sendText = document.getElementById('sendText')
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    sendText.innerHTML = "<div class='rakhmet'>Рахмет! Жауабыңыз қабылданды!</div>"
+                    setTimeout(function () {
+                        sendText.innerHTML = "";
+                    }, 5000);
+                    form.reset();
+                })
+
+
+
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>

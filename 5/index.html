@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Үйлену тойына шақыру</title>
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+  
+  <style>
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    
+    
+    /* Base Styles */
+    body {
+      background: rgba(255, 255, 255, 0.9);
+      margin: 0;
+      padding: 10px;
+      color: #5a0c0c;
+      text-align: center;
+      font-family: sans-serif;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    /* Music Button */
+    .music-button {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    /* Containers */
+    .container {
+      background: url('back.jpg');
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .main-image {
+      width: 100%;
+      border-radius: 20px;
+      margin-top: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Typography */
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+    
+    h2 {
+      font-size: 24px;
+      font-style: italic;
+    }
+    
+    .names {
+      font-size: 40px;
+      color: #800000;
+    }
+    
+    .invitation-text {
+      font-size: 36px;
+      margin-top: 15px;
+      line-height: 1.5;
+      color: black;
+    }
+    
+    .ornament {
+      width: 200px;
+      margin: 15px auto;
+    }
+    
+    /* Calendar */
+    .calendar {
+  font-size: 18px;
+  border-collapse: collapse;
+  margin: 20px auto;
+  display: table; /* restore table behavior for auto centering */
+  text-align: center;
+}
+
+.calendar td, .calendar th {
+  padding: 10px;
+}
+
+    
+    .highlight {
+      color: #004d00;
+      font-weight: bold;
+      position: relative;
+    }
+    
+    .highlight::after {
+      content: "❤";
+      font-size: 20px;
+      color: #004d00;
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .date {
+      font-size: 28px;
+      font-style: italic;
+      margin: 10px 0;
+    }
+    
+    .time {
+      font-size: 30px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    
+    /* Countdown */
+    .countdown-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  padding-top: 20px;
+  background: none;
+  height: auto;
+}
+    
+    .countdown-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .countdown {
+      font-size: 25px;
+      font-weight: bold;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 15px;
+      margin: 10px;
+    }
+    
+    .unit span {
+      font-size: 40px;
+      font-weight: bold;
+    }
+    
+    /* Map */
+    .map-section {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 40px auto;
+    }
+    
+    .map-section h2 {
+      font-size: 32px;
+      color: #4B0082;
+      margin-bottom: 10px;
+    }
+    
+    .map-section p {
+      font-size: 20px;
+      color: #5a0c0c;
+      font-weight: bold;
+    }
+    
+    .map-section iframe {
+      width: 100%;
+      height: 50vh;
+      border-radius: 10px;
+      border: 2px solid #4B0082;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* RSVP Form */
+    form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.radio-group {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  word-break: break-word;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+button {
+  width: 100%;
+  background-color: #8B0000;
+  color: white;
+  font-size: 18px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #a20000;
+}
+
+    
+    /* Popup */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    
+    .popup-content {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    
+    /* Loader */
+    .loader {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #8B0000;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+      display: none;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Photo Sections */
+    .photo-row, .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    
+    .photo-row img,
+.image-row img {
+  width: 360px; /* increased from 180px */
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+    
+    .image-row img:hover {
+      transform: scale(1.05);
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 28px;
+      }
+      .container {
+        max-width: 95%;
+      }
+    
+      .names {
+        font-size: 24px;
+      }
+    
+      .photo-row img,
+  .image-row img {
+    width: 95%; /* uses most of the screen width */
+  }
+    
+      .music-button {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+    
+      .time {
+        font-size: 24px;
+      }
+    
+      .calendar td, .calendar th {
+        padding: 5px;
+      }
+    }
+    
+    </style>
+    
+</head>
+<body>
+
+<!-- 1. PHOTO + MUSIC -->
+<div class="container">
+  <span class="names" style="font-size: 50px; font-family: 'Great Vibes', cursive;">Марат & Айгерім</span>
+
+  <!-- Wrap the image and button in a relative container -->
+  <div style="position: relative; display: inline-block;">
+    <!-- <img src="/home/marat9/myphotos/2 курс 1 семестр/20221120_194119.jpg" alt="Couple" class="main-image"> -->
+    <img src="7-2.jpg" alt="Couple" class="main-image">
+
+    <!-- Music Button Positioned on Bottom Center -->
+    <div class="music-button" id="playBtn">
+      <span id="playIcon">▶</span>
+    </div>
+  </div>
+</div>
+
+<audio id="music" src="main.mp3" autoplay loop></audio>
+
+<script>
+  const playBtn = document.getElementById("playBtn");
+  const playIcon = document.getElementById("playIcon");
+  const music = document.getElementById("music");
+
+  let isPlaying = false;
+
+  playBtn.addEventListener("click", () => {
+    if (!isPlaying) {
+      music.play();
+      playIcon.textContent = "❚❚"; // Pause symbol
+      isPlaying = true;
+    } else {
+      music.pause();
+      playIcon.textContent = "▶"; // Play symbol
+      isPlaying = false;
+    }
+  });
+
+  // Optional: Change icon automatically when audio ends or page loads with autoplay
+  music.addEventListener("ended", () => {
+    playIcon.textContent = "▶";
+    isPlaying = false;
+  });
+
+  // Optional: if autoplay is enabled and working, update icon
+  window.addEventListener("load", () => {
+    if (!music.paused) {
+      playIcon.textContent = "❚❚";
+      isPlaying = true;
+    }
+  });
+</script>
+
+
+<!-- 2. ТЕКСТ ПРИГЛАШЕНИЯ -->
+<div class="container">
+
+  <img src="https://static.tildacdn.com/tild6433-3135-4636-b232-613237353237/Group_6.png" class="ornament" alt="Kazakh Ornament">
+
+    <h1 id="guest-name" style="font-family: 'Caveat'; font-size: 45px;">Құрметті қонақтар!</h1>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestName = urlParams.get('guest');
+  
+    if (guestName) {
+      const decodedName = decodeURIComponent(guestName);
+      document.getElementById("guest-name").innerText = `Құрметті ${decodedName}!`;
+    }
+  </script>
+
+
+  <p class="invitation-text" style="font-family: 'Caveat'" >
+    Сіздерді<br>
+    <span class="names" style="font-size: 60px; font-family: 'Lobster', cursive;">Марат</span> <br>
+    пен <br>
+    <span class="names" style="font-size: 60px; font-family: 'Lobster', cursive;">Айгерім</span>
+  </p>
+
+  <p class="invitation-text" style="font-family: 'Caveat'" >
+    балаларымыздың үйлену тойына арналған салтанатты ақ дастарханымыздың<br>
+    қадірлі қонағы болуға шақырамыз!
+  </p>
+  <img src="https://static.tildacdn.com/tild6433-3135-4636-b232-613237353237/Group_6.png" class="ornament" alt="Kazakh Ornament" style="transform: rotate(180deg);">
+</div>
+
+<!-- 3. ДАТА И ВРЕМЯ СВАДЬБЫ -->
+<div class="container">
+  <h1 style="font-family: 'Great Vibes', cursive;">Той салтанаты:</h1>
+
+  <p class="date" style="font-family: 'Great Vibes', cursive;">10 тамыз 2025 жыл</p>
+
+  <table class="calendar">
+    <tr>
+      <th>ДС</th>
+      <th>СС</th>
+      <th>СР</th>
+      <th>БС</th>
+      <th>ЖМ</th>
+      <th>СН</th>
+      <th>ЖС</th>
+    </tr>
+    <tr>
+      <td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td>
+    </tr>
+    <tr>
+      <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td class="highlight">10</td>
+    </tr>
+    <tr>
+      <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+    </tr>
+    <tr>
+      <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+    </tr>
+    <tr>
+      <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+    </tr>
+  </table>
+
+
+  <p class="time" >Уақыты<br>18:00</p>
+
+  <!-- 4. ТАЙМЕР ДО ДАТЫ -->
+<div class="container">
+  <img src="8.jpg" alt="Countdown Image" class="main-image" style="margin-bottom: 20px;">
+
+  <div class="countdown-content" style="padding: 20px;">
+    <h1 style="color: #5a0c0c; font-size: 28px; margin-bottom: 20px;">Тойға дейін:</h1>
+    <div class="countdown" style="color: #5a0c0c;">
+      <div class="unit">
+        <span id="days">0</span>
+        КҮН
+      </div>
+      <div class="unit">
+        <span id="hours">0</span>
+        САҒАТ
+      </div>
+      <div class="unit">
+        <span id="minutes">0</span>
+        МИНУТ
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<script>
+  function startCountdown() {
+    const targetDate = new Date("August 10, 2025 18:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      if (timeLeft <= 0) {
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        return;
+      }
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+    }, 1000);
+  }
+
+  startCountdown();
+</script>
+
+<!-- 5. МЕСТО СВАДЬБЫ (КАРТА) -->
+<div class="container">
+  <h1>Мекен-жайымыз:</h1>
+  <a href="https://go.2gis.com/aPixJ" target="_blank" style="margin-top: 10px;">
+    <img src="https://play-lh.googleusercontent.com/55huczUZ05ruaVynURUNqzgTu0qXLF-SPQZKtE9KA6_BavI-g0NgXz1NR98n5xX33HwD" alt="2GIS карта" width="70" height="70" style="border-radius: 8px;">
+  </a>
+  <p class="invitation-text" style="font-size: 30px;">
+    Ақтөбе қаласы, Тургенова 80в<br>
+    <span class="names">"Жерұйық"</span><br>мейрамханасы
+  </p>
+
+  <img src="https://static.tildacdn.com/tild6433-3135-4636-b232-613237353237/Group_6.png" class="ornament" alt="Kazakh Ornament">
+
+  <h1 style="font-family: 'Marck Script', cursive;">Той иелері:</h1>
+  <p class="names" style="font-family: 'Marck Script', cursive;">Абай - Алия</p>
+
+  <img src="https://static.tildacdn.com/tild6433-3135-4636-b232-613237353237/Group_6.png" class="ornament" alt="Kazakh Ornament" style="transform: rotate(180deg);">
+</div>
+
+<div class="container">
+
+  <h1>Тойға келесіз бе?</h1>
+
+  <form id="rsvp-form">
+    <input type="text" id="name" placeholder="Есіміңіз" required>
+
+    <label>Жұбыңызбен келсеңіз, есімін бірге жазуыңызды сұраймыз!</label>
+
+    <div class="radio-group">
+      <label><input type="radio" name="answer" value="Әрине, келемін" required> Әрине, келемін</label>
+      <label><input type="radio" name="answer" value="Өкінішке орай, келе алмаймын"> Өкінішке орай, келе алмаймын</label>
+    </div>
+
+    <button type="submit">ЖІБЕРУ</button>
+  </form>
+
+  <img src="https://static.tildacdn.com/tild6433-3135-4636-b232-613237353237/Group_6.png" class="ornament" alt="Kazakh Ornament">
+
+  <div class="invitation-block">
+    <div class="photo-row">
+      <img src="IMG_7453.JPG" alt="Countdown Image" class="main-image" style="margin-bottom: 20px;">
+    </div>
+
+    <h1 style="font-family: 'Caveat'">Келіңіздер,<br>
+        тойымыздың<br>
+        қадірлі қонағы<br>
+        болыңыздар!</h1>
+  
+  </div>
+  <img src="https://static.tildacdn.com/tild6433-3135-4636-b232-613237353237/Group_6.png" class="ornament" alt="Kazakh Ornament" style="transform: rotate(180deg);">
+
+</div>
+
+<div class="loader" id="loader"></div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    ✅ Жауабыңыз сәтті жіберілді! Рақмет!
+    <br><br>
+    <button onclick="closePopup()">Жабу</button>
+  </div>
+</div>
+
+
+<script>
+  const botToken = "7878378323:AAEu9pBaaBYZxW2L8rhBZfD-QZAZvyrmpgo";
+  const chatId = "1360043549"; // e.g. -1001234567890 or your user ID
+
+  const form = document.getElementById("rsvp-form");
+  const loader = document.getElementById("loader");
+  const popup = document.getElementById("popup");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const answer = document.querySelector('input[name="answer"]:checked').value;
+    const message = `📩 *Той RSVP*\n👤 Есім: ${name}\n✅ Жауап: ${answer}`;
+
+    // Show loader
+    loader.style.display = "block";
+
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: "Markdown"
+      })
+    })
+      .then(res => res.json())
+      .then(data => {
+        loader.style.display = "none";
+
+        if (data.ok) {
+          form.reset();
+          popup.style.display = "flex"; // Show popup
+        } else {
+          alert("Telegram-ға жіберу мүмкін болмады 😢");
+        }
+      })
+      .catch(error => {
+        loader.style.display = "none";
+        alert("Қате орын алды. Кейінірек қайталап көріңіз.");
+        console.error("Telegram Error:", error);
+      });
+  });
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
